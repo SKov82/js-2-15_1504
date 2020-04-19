@@ -1,0 +1,8 @@
+Последовательность действий:
+
+npm init -y
+
+Установить webpack
+npm webpack webpack-cli --save-dev
+
+Установить build в файле package.json
