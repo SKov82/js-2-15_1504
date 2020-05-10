@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore explicabo nobis voluptatibus eveniet ex 
+        quae nemo provident reprehenderit officia ipsum quia laborum blanditiis quaerat impedit, 
+        earum numquam eum, pariatur recusandae.</p>
+
+        <button onclick="searchStr()">search</button>
+        <button onclick="matchStr()">match</button>
+        <hr>
+        <button onclick="searchStrReg()">search reg</button>
+        <button onclick="testRegStr()">test reg</button>
+        <button onclick="matchStrReg()">match reg</button>
+        <hr>
+        <button onclick="replace()">replace</button>
+    
+    <script>
+        let str = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore explicabo nobis voluptatibus eveniet ex 
+        quae nemo provident reprehenderit officia ipsum quia laborum blanditiis quaerat impedit, 
+        earum numquam eum, pariatur recusandae.`;
+
+        function searchStr () {
+            let search = prompt();
+            console.log(str.search(search));
+        }
+
+        function matchStr() {
+            let search = prompt(); // 'str'
+            console.log(str.match(search));
+        }
+
+        function searchStrReg () {
+            // let reg = /test/ig // /выражение/флаги (i - нерегистрозависимое g - "глобальный поиск")
+            let search = prompt();
+
+            // let reg = new RegExp('выражение', 'флаги');
+            let reg = new RegExp(search, 'gi');
+            console.log(str.search(reg));
+        }
+
+        function testRegStr () {
+            // let reg = /test/ig // /выражение/флаги (i - нерегистрозависимое g - "глобальный поиск")
+            let search = prompt();
+
+            // let reg = new RegExp('выражение', 'флаги');
+            let reg = new RegExp(search, 'gi');
+            console.log(reg.test(str));
+        }
+
+        function matchStrReg () {
+            let search = prompt();
+            let reg = new RegExp(search, 'g');
+            console.log(str.match(reg));
+        }
+
+        function replace() {
+            // str = str.replace('o', '! =O= !');
+            // console.log(str);
+            let what = prompt('What..');
+            let withWhat = prompt('With...');
+            let reg = new RegExp (what, 'ig');
+            str = str.replace(reg, withWhat);
+            console.log(str);
+        }
+    </script>
+</body>
+</html>

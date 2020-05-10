@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--контейнер Vue приложения-->
+        <!--h1>Hello Vue</h1-->
+        <input type="text" v-model.lazy="userName">
+        <!--p>{{ hello('Sergey') }}</p-->
+        <p>{{ greetings }}</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        // function hello() {
+        //     return 'Some str'
+        // }
+        // Vue
+        let app = new Vue({
+            el: '#app', //контейнер для приложения
+            data: {
+                //внутренние переменные (параметры) компонента
+                userName: '',
+            },
+            methods: {
+                //функции нашего вью-компонента, которые делают что-то
+                
+            },
+            computed: {
+                //функции вью-компонента, которые ничего не делают, но возвращают значения
+                greetings() {
+                    return 'Hello, ' + this.userName;
+                }
+            },
+            // lifecycle hooks
+        });
+    </script>
+</body>
+</html>

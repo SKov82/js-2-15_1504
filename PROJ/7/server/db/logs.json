@@ -1,0 +1,72 @@
+[
+ {
+  "time": "2020-05-09T09:17:29.679Z",
+  "action": "increase",
+  "item": "Notebook"
+ },
+ {
+  "time": "2020-05-09T09:17:30.639Z",
+  "action": "add",
+  "item": "Display"
+ },
+ {
+  "time": "2020-05-09T09:17:31.206Z",
+  "action": "increase",
+  "item": "Display"
+ },
+ {
+  "time": "2020-05-09T09:17:31.958Z",
+  "action": "add",
+  "item": "Keyboard"
+ },
+ {
+  "time": "2020-05-09T09:17:33.139Z",
+  "action": "decrease",
+  "item": "Notebook"
+ },
+ {
+  "time": "2020-05-09T09:17:33.396Z",
+  "action": "decrease",
+  "item": "Notebook"
+ },
+ {
+  "time": "2020-05-09T09:18:00.916Z",
+  "action": "decrease",
+  "item": "Notebook"
+ },
+ {
+  "time": "2020-05-09T09:18:12.674Z",
+  "action": "decrease",
+  "item": "Notebook"
+ },
+ {
+  "time": "2020-05-09T09:19:43.518Z",
+  "action": "delete",
+  "item": "Notebook"
+ },
+ {
+  "time": "2020-05-09T09:19:46.285Z",
+  "action": "delete",
+  "item": "Keyboard"
+ },
+ {
+  "time": "2020-05-09T09:19:47.606Z",
+  "action": "decrease",
+  "item": "Display"
+ },
+ {
+  "time": "2020-05-09T09:19:48.424Z",
+  "action": "delete",
+  "item": "Display"
+ },
+ {
+  "time": "2020-05-09T09:45:53.336Z",
+  "action": "add",
+  "item": "Notebook"
+ },
+ {
+  "time": "2020-05-09T09:46:02.973Z",
+  "action": "add",
+  "item": "Display"
+ }
+]

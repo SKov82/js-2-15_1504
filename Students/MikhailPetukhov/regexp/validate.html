@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .not-valid {
+        background-color: red; /* Цвет фона */
+   }
+  </style>
+</head>
+<body>
+    <div class="">
+        <h1>FILL FORM</h1>
+
+        <div class="my-2">
+            <form action="#" id="app-form">
+                <fieldset>
+                    <label>
+                        <input type="text" name="Name"> Enter name
+                    </label>
+                </fieldset> 
+                <fieldset>
+                    <label>
+                        <input type="text" name="Phone" value = "+7(000)000-0000"> Enter phone number
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label>
+                        <input type="text" name="Email" value = "aaa@aaaaa.aa"> Enter E-mail
+                    </label>
+                </fieldset>
+            </form>
+            <button onclick="validate()">Validate</button>
+            <div id="comment"></div>
+        </div>
+    </div>
+    <br>
+    <script>
+        function validate() {
+            const regExprs = {
+                "Name": /^[A-ZА-Я]?[a-zа-я]+$/,
+                "Phone": /^\+7\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/,
+                "Email": /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/,
+            }
+            let fields = Object.keys(regExprs);
+            let form = document.querySelector('#app-form');
+            let invalidFields = [];
+
+            fields.forEach(el => {
+                let nameField = form.querySelector(`input[name=${el}]`);
+                let regexp = regExprs[el];
+                if (regexp.test(nameField.value)) {
+                    nameField.classList.remove("not-valid");
+                } else {
+                        nameField.classList.add("not-valid"); 
+                        invalidFields.push(el);
+                } 
+            });
+            let comment = document.querySelector('#comment')
+            switch (invalidFields.length) {
+                case 0: comment.innerText = "Form is valid";
+                        break;
+                case 1: comment.innerText = "Field " + invalidFields + " is invalid";
+                        break;
+                default: comment.innerText = "Fields " + invalidFields + " are invalid";
+            }
+        }
+    </script>
+</body>
+</html>

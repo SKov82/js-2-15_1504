@@ -1,0 +1,26 @@
+[
+ {
+  "id": 3,
+  "name": "Кроссовки Leaf",
+  "style": "Ekebol_Grey",
+  "price": 1200,
+  "image_link": "https://fastpic.co/images/Ekebol_Grey.jpg",
+  "quantity": 1
+ },
+ {
+  "id": 2,
+  "name": "Куртка Red Zeroes",
+  "style": "11-87-325",
+  "price": 1600,
+  "image_link": "https://fastpic.co/images/11-87-325-1.jpg",
+  "quantity": 1
+ },
+ {
+  "id": 1,
+  "name": "Куртка Red Zeroes",
+  "style": "111502_440",
+  "price": 1200,
+  "image_link": "https://fastpic.co/images/111502_440.jpg",
+  "quantity": 2
+ }
+]

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function check_field(field, r) {
+            if (!(r.test(field.value))) {
+                field.classList.add('error');
+                return false;
+            } else {
+                field.classList.remove('error');
+                return true;
+            }
+        }
+
+        function validate () {
+            let fields = document.forms.contact_form;
+            let name = check_field(fields["name"], /[а-я]/i);
+            let phone = check_field(fields["phone"], /\+7\(\d{3}\)\d{3}-\d{4}/);
+            let email = check_field(fields["email"], /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/i);
+            let text = check_field(fields["text"], /.+/i);
+            return (name && phone && email & text) ? true : false;
+        }
+
+    </script>
+
+    <style>
+        .error {
+            border-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <form name="contact_form" onsubmit="return validate()">
+        <table>
+            <tr>
+                <td>Имя: </td>
+                <td><input name="name" type="text"></td>
+            </tr>
+            <tr>
+                <td>Телефон: </td>
+                <td><input name="phone" type="text"></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td><input name="email" type="text"></td>
+            </tr>
+            <tr>
+                <td>Текст: </td>
+                <td><input name="text" type="text"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button name="send">OK</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

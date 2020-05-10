@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // JSON
+        // Callback // все Object.keys().forEach(el => {})
+        // Promise
+        // XHR
+
+
+        //1 HTML >>>> XML
+        //2 text >>>> plain/text, JSON (application/json)
+        //3 bit
+
+        // JSON
+        // let obj = {
+        //     a: 100,
+        //     b: true,
+        //     c: 'string',
+        //     d: [1, 2, null],
+        //     e: {
+        //         aa: 11,
+        //         bb: 'str'
+        //     }
+        // }
+
+        // console.log(JSON.stringify(obj))
+        // JSON.stringify({}) // object >> JSON
+        // JSON.parse('{}') // JSON >> object
+
+        // callback
+
+        // function asyncFunc() {
+        //     //объявление
+        //     let a;
+
+        //     //получение
+        //     setTimeout(() => {
+        //         a = 100;
+        //         console.log ('some time later... 2 ' + a);
+        //     }, 2000);
+
+
+        //     //действие
+        //     console.log (a);
+        // }
+        
+        // let a;
+
+        // function doSmth(data) {
+        //     console.log('Some ' + data);
+        // }
+
+        // function getData(cb) {
+        //     setTimeout (() => {
+        //         a = 100500;
+        //         cb(a);
+        //     }, 2000)
+        // }
+
+        // doSmth(a);
+
+        // getData(doSmth);
+
+        // getData (data => {
+        //     //
+        //     //
+        //     getData(() => {
+        //         ///
+        //         ///
+        //         ///
+        //         getData(() => {
+        //             ///*/
+        //             ///*/
+        //             ///*/
+        //             ///*/
+        //             //callBackHell
+        //         })
+        //     })
+        //     //
+        //     console.log(data);
+        //     return data + ''
+        // })
+
+        // PROMISES
+
+        //1 описание
+        // function promiseFunc (par) {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout (() => {
+        //             if (par) {
+        //                 resolve('Promise Good');
+        //             } else {
+        //                 reject('Promise Bad');
+        //             }
+        //         }, 1000)
+        //     });
+        // }
+
+        // //2 вызов
+        // function exec(par) {
+        //     promiseFunc(par)
+        //         .then(data => { 
+        //             console.log(data) 
+        //             return 1
+        //         })
+        //         .catch(par => { 
+        //             console.log(par) 
+        //         })
+        //         .finally(() => { 
+        //             console.log('Promise end') 
+        //         })
+        // }
+        let url = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json'
+
+
+        function getData(reqUrl) {
+            return new Promise((res, rej) => {
+                let req = new XMLHttpRequest(); //если не считаем IE
+                req.open('GET', reqUrl, true); 
+                
+                req.onreadystatechange = function () {
+                    if (req.readyState == 4) {
+                        if(req.status == 200) {
+                            res(JSON.parse(req.responseText));
+                        } else {
+                            rej('error');
+                        }
+                    }
+                };
+                req.send(); 
+            }) 
+        }
+
+        function exec(rUrl) {
+            getData(rUrl)
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+                .finally(() => {
+                    console.log('request end')
+                })
+        }
+    </script>
+</body>
+</html>

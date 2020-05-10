@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="d-flex">
+    <form action="#">
+        <fieldset>
+            <input type="radio" name="burger" id="big" checked data-price="100" data-cal="40">
+            <label for="big">Большой бургер (100 rub., 40 cal)</label><br>
+            <input type="radio" name="burger" id="small" data-price="50" data-cal="20">
+            <label for="small">Маленький бургер (50 rub., 20 cal)</label>
+        </fieldset>
+        <fieldset>
+            <input type="radio" name="add" id="cheese" checked data-price="10" data-cal="20">
+            <label for="cheese">С сыром (+10 rub., +20 cal)</label><br>
+            <input type="radio" name="add" id="salad" data-price="20" data-cal="5">
+            <label for="salad">С салатом (+20 rub., +5 cal)</label><br>
+            <input type="radio" name="add" id="potato" data-price="15" data-cal="10">
+            <label for="potato">С картофелем (+15 rub., +10 cal)</label>
+        </fieldset>
+        <fieldset>
+            <input type="checkbox" name="mayon" id="mayon" data-price="15" data-cal="10">
+            <label for="mayon">С майонезом (+15 rub., +10 cal)</label><br>
+            <input type="checkbox" name="spice" id="spicy" data-price="15" data-cal="0">
+            <label for="spicy">Со специями (+15 rub., +0 cal)</label>
+        </fieldset>
+        <fieldset>
+            Summary: Цена: <span id="summary_price"></span>, калорийность <span id="summary_cal"></span>
+        </fieldset>
+    </form>
+</div>
+<script>
+
+</script>
+<script src="../script/js/main.js"></script>
+</body>
+</html>
